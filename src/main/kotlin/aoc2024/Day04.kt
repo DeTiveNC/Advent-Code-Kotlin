@@ -1,4 +1,6 @@
-class Day04Class(private val input : List<String>) {
+package aoc2024
+
+class Day04(private val input : List<String>) {
     fun solvePart1(): Int =
         input.flatMapIndexed { y, row ->
             row.mapIndexed { x, c ->

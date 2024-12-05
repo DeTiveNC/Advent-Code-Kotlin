@@ -1,7 +1,5 @@
-rootProject.name = "Advent-Code-Kotlin-2024"
-
-dependencyResolutionManagement {
-    repositories {
-        mavenCentral()
-    }
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
 }
+rootProject.name = "Advent-Code-Kotlin"
+
