@@ -1,6 +1,8 @@
+package aoc2024
+
 import kotlin.math.abs
 
-class Day01Class(private val input: List<String>) {
+class Day01(private val input: List<String>) {
     fun distance(): Int {
         val (listOne, listTwo) = devolverDosListas(input)
 

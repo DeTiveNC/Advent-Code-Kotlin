@@ -1,4 +1,6 @@
-class Day02Class(private val input: List<String>) {
+package aoc2024
+
+class Day02(private val input: List<String>) {
     fun obtenerSafeCount(part: Int): Int {
         return devolverInt(part)
     }

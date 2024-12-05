@@ -1,4 +1,6 @@
-class Day03Class(private val input: List<String>) {
+package aoc2024
+
+class Day03(private val input: List<String>) {
     fun solvePart1(): Int {
         val regex = """mul\((\d{1,3}),(\d{1,3})\)""".toRegex()
 
