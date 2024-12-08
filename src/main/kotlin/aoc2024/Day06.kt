@@ -51,18 +51,4 @@ class Day06(private val input: List<String>) {
             Punto2D.OESTE -> Punto2D.NORTE
             else -> error("Bad direction: $this")
         }
-
-
-    data class Punto2D(val x: Int, val y: Int) {
-
-        operator fun plus(other: Punto2D): Punto2D =
-            Punto2D(x + other.x, y + other.y)
-
-        companion object {
-            val NORTE = Punto2D(0, -1)
-            val ESTE = Punto2D(1, 0)
-            val SUR = Punto2D(0, 1)
-            val OESTE = Punto2D(-1, 0)
-        }
-    }
 }
