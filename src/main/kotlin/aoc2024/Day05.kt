@@ -1,6 +1,6 @@
 package aoc2024
 
-class Day05(private val input: List<String>) {
+class Day05(input: List<String>) {
     private val reglas = input.takeWhile { it != "" }.fold(mapOf<Int, Set<Int>>()) { map, line ->
         val (f, s) = line.split("|")
         map + (f.toInt() to map.getOrElse(f.toInt()) { emptySet() } + s.toInt())

@@ -1,6 +1,8 @@
 package aoc2024
 
-class Day06(private val input: List<String>) {
+import aoc2024.utils.Punto2D
+
+class Day06(input: List<String>) {
     private val grid: List<CharArray> = input.map { it.toCharArray() }
 
     private val start: Punto2D = grid
@@ -42,13 +44,4 @@ class Day06(private val input: List<String>) {
     private operator fun List<CharArray>.set(at: Punto2D, c: Char) {
         this[at.y][at.x] = c
     }
-
-    private fun Punto2D.direccionGiro(): Punto2D =
-        when (this) {
-            Punto2D.NORTE -> Punto2D.ESTE
-            Punto2D.ESTE -> Punto2D.SUR
-            Punto2D.SUR -> Punto2D.OESTE
-            Punto2D.OESTE -> Punto2D.NORTE
-            else -> error("Bad direction: $this")
-        }
 }

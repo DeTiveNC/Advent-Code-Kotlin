@@ -1,5 +1,7 @@
 package aoc2024
 
+import aoc2024.utils.Punto2D
+
 class Day08(private val input: List<String>) {
 
     private val nodos: Collection<List<Punto2D>> = parseGrid(input)
@@ -16,7 +18,7 @@ class Day08(private val input: List<String>) {
                 listaNodo.drop(i + 1).flatMap { b ->
                     worker.invoke(a, b, a - b)
                 }
-            }.filter { it.estaEnGrid() }
+            }.filter { it.estaEnGrid(input) }
         }.toSet().size
 
     private fun antiNodosParaPart1(a: Punto2D, b: Punto2D, diff: Punto2D): Set<Punto2D> =
@@ -24,11 +26,9 @@ class Day08(private val input: List<String>) {
         else setOf(a + diff, b - diff)
 
     private fun antiNodosParaPart2(a: Punto2D, b: Punto2D, diff: Punto2D): Set<Punto2D> =
-        generateSequence(a) { it - diff }.takeWhile { it.estaEnGrid() }.toSet() +
-                generateSequence(b) { it + diff }.takeWhile { it.estaEnGrid() }.toSet()
+        generateSequence(a) { it - diff }.takeWhile { it.estaEnGrid(input) }.toSet() +
+                generateSequence(b) { it + diff }.takeWhile { it.estaEnGrid(input) }.toSet()
 
-    private fun Punto2D.estaEnGrid(): Boolean =
-        y in input.indices && x in input[y].indices
 
     private fun parseGrid(input: List<String>): Collection<List<Punto2D>> =
         input.flatMapIndexed { y, filas ->

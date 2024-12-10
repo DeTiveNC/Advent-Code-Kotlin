@@ -1,6 +1,6 @@
 package aoc2024
 
-class Day07(private val input: List<String>) {
+class Day07(input: List<String>) {
 
     private val ecuaciones: List<List<Long>> = input
         .map { it.split("""\D+""".toRegex()).map { it.toLong() } }
